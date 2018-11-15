@@ -99,4 +99,9 @@ git这种commit 之后存储快照流的方式较为浪费空间<br>
 <p>Git 是如何做到这点的？ Git 打包对象时，会查找命名及大小相近的文件，并只保存文件不同版本之间的差异内容。 你可以查看包文件，观察它是如何节省空间的。 git verify-pack 这个底层命令可以让你查看已打包的内容：</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/pack-verify.png" alt="enter image description here"></p>
+<p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/git-pro-book%E5%8E%9F%E6%96%87%E4%BE%8B%E5%AD%90.png" alt=""></p>
+<p>上图是pro git这本书的例子，上面我们自己的例子好像并没有体现出差异性存储，新a.txt6个字节（aaaaab）旧a.txt5个字节（aaaaa）并且没有引用。<br>
+我知道了，之所以会出现这样的情况是因为这两个文件的内容在同一行，<br>
+你在aaaaa后面追加了一个b变成aaaaab，在git看来不是加了一个b而是删除了一行aaaaa，然后在添加一行aaaaab，两个版本不存在增量delta（δ）<br>
+如果想像书的作者那种结果，你应该在a.txt文件中增加一行内容。</p>
 
