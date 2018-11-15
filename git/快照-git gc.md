@@ -35,14 +35,14 @@ b.txt文件不改动<br>
 <h4 id="分析这三个对象">分析这三个对象</h4>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E5%88%86%E6%9E%90%E4%B8%89%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt="enter image description here"></p>
 <ul>
-<li>commit object 存储了新的tree引用 以及 父提交的引用</li>
-<li>tree object 还是存储了两个引用
+<li>1个  commit object 存储了新的tree引用 以及 父提交的引用</li>
+<li>1个  tree object 还是存储了两个引用
 <ul>
 <li>一个是新的指向本次修改的文件（a.txt）</li>
 <li>一个是旧的，本次未修改的文件（b.txt）</li>
 </ul>
 </li>
-<li>新生成的blob文件代表了本次修改的a.txt，没有生成代表b.txt的blob，因为b.txt本次未修改。</li>
+<li>1 个 新生成的blob文件代表了本次修改的a.txt，没有生成代表b.txt的blob，因为b.txt本次未修改。</li>
 </ul>
 <h3 id="总结">总结</h3>
 <ol>
