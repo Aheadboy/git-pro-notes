@@ -4,15 +4,15 @@
 ---
 
 <h1 id="git-快照-与-git-gc">Git 快照 与 git gc</h1>
-<h4 id="git-snapshot？commit之后发生了什么？">Git snapshot？commit之后发生了什么？</h4>
-<p>有一个gitTest仓库 ，管理了两个文件</p>
+<h3 id="git-snapshot？commit之后发生了什么？">Git snapshot？commit之后发生了什么？</h3>
+<h4 id="有一个gittest仓库-，管理了两个文件">有一个gitTest仓库 ，管理了两个文件</h4>
 <ul>
 <li>a.txt (文件内容为‘aaaaa’）</li>
 <li>b.txt（文件内容为‘bbbbb’）<br>
 如下图<br>
 <img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/a-b%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6%E8%A2%ABgit%E7%AE%A1%E7%90%86.png" alt="两个被git管理的文件"></li>
 </ul>
-<p>commit之后生成四个对象</p>
+<h4 id="commit之后生成四个对象">commit之后生成四个对象</h4>
 <ol>
 <li>提交对象</li>
 <li>树对象</li>
@@ -28,7 +28,7 @@
 <li>tree object 存储了 指向两个blob的引用</li>
 <li>两个blob对象分别存储各自文件内容</li>
 </ul>
-<h4 id="修改一个文件后commit">修改一个文件后commit</h4>
+<h4 id="修改a.txt后commit">修改a.txt后commit</h4>
 <p>在a.txt文件内容中追加一个字母b使内容变成：‘aaaaab’<br>
 b.txt文件不改动<br>
 再次commit</p>
@@ -44,4 +44,9 @@ b.txt文件不改动<br>
 </li>
 <li>新生成的blob文件代表了本次修改的a.txt，没有生成代表b.txt的blob，因为b.txt本次未修改。</li>
 </ul>
+<h3 id="总结">总结</h3>
+<ol>
+<li>解释了<strong>s.n.a.p.s.h.o.t</strong></li>
+<li>剖析了git commit之后发生了什么</li>
+</ol>
 
