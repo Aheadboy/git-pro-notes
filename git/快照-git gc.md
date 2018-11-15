@@ -28,4 +28,20 @@
 <li>tree object 存储了 指向两个blob的引用</li>
 <li>两个blob对象分别存储各自文件内容</li>
 </ul>
+<h4 id="修改一个文件后commit">修改一个文件后commit</h4>
+<p>在a.txt文件内容中追加一个字母b使内容变成：‘aaaaab’<br>
+b.txt文件不改动<br>
+再次commit</p>
+<h4 id="分析这三个对象">分析这三个对象</h4>
+<p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E5%88%86%E6%9E%90%E4%B8%89%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt="enter image description here"></p>
+<ul>
+<li>commit object 存储了新的tree引用 以及 父提交的引用</li>
+<li>tree object 还是存储了两个引用
+<ul>
+<li>一个是新的指向本次修改的文件（a.txt）</li>
+<li>一个是旧的，本次未修改的文件（b.txt）</li>
+</ul>
+</li>
+<li>新生成的blob文件代表了本次修改的a.txt，没有生成代表b.txt的blob，因为b.txt本次未修改。</li>
+</ul>
 
