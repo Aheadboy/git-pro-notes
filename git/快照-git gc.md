@@ -96,7 +96,7 @@ git这种commit 之后存储快照流的方式较为浪费空间<br>
 </ul>
 <h4 id="打包细节">打包细节</h4>
 <blockquote>
-<p>Git 是如何做到这点的？ Git 打包对象时，会查找命名及大小相近的文件，并只保存文件不同版本之间的差异内容。 你可以查看包文件，观察它是如何节省空间的。 git verify-pack 这个底层命令可以让你查看已打包的内容：<br>
-<img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/pack-verify.png" alt="enter image description here"></p>
+<p>Git 是如何做到这点的？ Git 打包对象时，会查找命名及大小相近的文件，并只保存文件不同版本之间的差异内容。 你可以查看包文件，观察它是如何节省空间的。 git verify-pack 这个底层命令可以让你查看已打包的内容：</p>
 </blockquote>
+<p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/pack-verify.png" alt="enter image description here"></p>
 
