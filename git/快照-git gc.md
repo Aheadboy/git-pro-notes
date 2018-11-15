@@ -4,7 +4,7 @@
 ---
 
 <h1 id="git-快照-与-git-gc">Git 快照 与 git gc</h1>
-<h4 id="git-snapshot">Git snapshot</h4>
+<h4 id="git-snapshot？commit之后发生了什么？">Git snapshot？commit之后发生了什么？</h4>
 <p>有一个gitTest仓库 ，管理了两个文件</p>
 <ul>
 <li>a.txt (文件内容为‘aaaaa’）</li>
@@ -23,4 +23,9 @@
 <p>这四个对象就是<strong>S.N.A.P.S.H.O.T</strong></p>
 <h4 id="通过命令分析">通过命令分析</h4>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E5%88%86%E6%9E%90%E8%BF%99%E5%9B%9B%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt="enter image description here"></p>
+<ul>
+<li>commit object存储了 指向 tree object的引用</li>
+<li>tree object 存储了 指向两个blob的引用</li>
+<li>两个blob对象分别存储各自文件内容</li>
+</ul>
 
