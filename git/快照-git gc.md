@@ -24,9 +24,9 @@
 <h4 id="通过命令分析">通过命令分析</h4>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E5%88%86%E6%9E%90%E8%BF%99%E5%9B%9B%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt="enter image description here"></p>
 <ul>
-<li>commit object存储了 指向 tree object的引用</li>
-<li>tree object 存储了 指向两个blob的引用</li>
-<li>两个blob对象分别存储各自文件内容</li>
+<li>1个 commit object存储了 指向 tree object的引用</li>
+<li>1个 tree object 存储了 指向两个blob的引用</li>
+<li>2个 blob对象分别存储各自文件内容</li>
 </ul>
 <h4 id="修改a.txt后commit">修改a.txt后commit</h4>
 <p>在a.txt文件内容中追加一个字母b使内容变成：‘aaaaab’<br>
