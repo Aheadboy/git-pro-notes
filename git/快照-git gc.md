@@ -4,7 +4,7 @@
 ---
 
 <h1 id="git-快照-与-git-gc">Git 快照 与 git gc</h1>
-<h3 id="git-snapshot？commit之后发生了什么？">Git snapshot？commit之后发生了什么？</h3>
+<h2 id="git-snapshot？commit之后发生了什么？">Git snapshot？commit之后发生了什么？</h2>
 <h4 id="有一个gittest仓库-，管理了两个文件">有一个gitTest仓库 ，管理了两个文件</h4>
 <ul>
 <li>a.txt (文件内容为‘aaaaa’）</li>
@@ -46,7 +46,57 @@ b.txt文件不改动<br>
 </ul>
 <h3 id="总结">总结</h3>
 <ol>
-<li>解释了<strong>s.n.a.p.s.h.o.t</strong></li>
+<li>解释了<strong>s.n.a.p.s.h.o.t</strong>
+<ul>
+<li>快照就是<strong>文件内容加</strong>上信息头，经过<strong>zlib压缩</strong>后存盘的一个文件</li>
+<li>一种松散的格式（<strong>loose</strong> object format）</li>
+</ul>
+</li>
 <li>剖析了git commit之后发生了什么</li>
 </ol>
+<h2 id="git-打包git-gc">Git 打包(git gc)</h2>
+<p>相比其他vcs，存储文件各个版本的差异性<br>
+git这种commit 之后存储快照流的方式较为浪费空间<br>
+哪怕就是添加了一个字母也重新存储一份新的快照。</p>
+<ul>
+<li><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/ZE9J0%7DV@LEIU@2W9SN0$7%251.png" alt="修改前快照的大小"><br>
+修改前a.txt的快照大小</li>
+<li><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/D%5D%7B%25P6$%7BEFFI~YYRTIG~38R.png" alt="修改后快照的大小"><br>
+修改后a.txt快照大小。</li>
+</ul>
+<p>为了解决这个问题git会进行打包操作（即<strong>git gc</strong>命令）</p>
+<h4 id="打包的时间点">打包的时间点</h4>
+<ul>
+<li>时不时</li>
+<li>手动git gc</li>
+<li>push到远程仓库时</li>
+</ul>
+<h4 id="打包的结果">打包的结果</h4>
+<p>在.git/objects/pack路径下</p>
+<ul>
+<li>一个 *.idx文件</li>
+<li>一个或多个 *.pack文件
+<ul>
+<li>存储文件最新版本（因为最新版本的使用率更改）完整内容的快照，以及其他版本的差异</li>
+</ul>
+</li>
+</ul>
+<h4 id="手动git-gc">手动git gc</h4>
+<ul>
+<li>
+<p>执行前<img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E6%9C%AAgit-gc.png" alt=""></p>
+</li>
+<li>
+<p>执行命令<img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/git-gc.png" alt=""></p>
+</li>
+<li>
+<p>执行后<img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/git-gc-pack.png" alt=""><br>
+<img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%60F9XP%29Z5WLY1S$9IAXM%60R84.png" alt="enter image description here"></p>
+</li>
+</ul>
+<h4 id="打包细节">打包细节</h4>
+<blockquote>
+<p>Git 是如何做到这点的？ Git 打包对象时，会查找命名及大小相近的文件，并只保存文件不同版本之间的差异内容。 你可以查看包文件，观察它是如何节省空间的。 git verify-pack 这个底层命令可以让你查看已打包的内容：<br>
+<img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/pack-verify.png" alt="enter image description here"></p>
+</blockquote>
 
