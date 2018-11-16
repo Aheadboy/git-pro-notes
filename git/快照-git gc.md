@@ -32,6 +32,7 @@
 <p>在a.txt文件内容中追加一个字母b使内容变成：‘aaaaab’<br>
 b.txt文件不改动<br>
 再次commit</p>
+<p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E6%96%B0%E5%A2%9E%E4%BA%863%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt=""></p>
 <h4 id="分析这三个对象">分析这三个对象</h4>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E5%88%86%E6%9E%90%E4%B8%89%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt="enter image description here"></p>
 <ul>
