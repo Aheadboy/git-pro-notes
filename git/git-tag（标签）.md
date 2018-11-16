@@ -20,6 +20,7 @@
 </ul>
 </li>
 <li>对指定提交（commit） 打标签</li>
+<li>push标签</li>
 </ul>
 <ol>
 <li>列出标签</li>
