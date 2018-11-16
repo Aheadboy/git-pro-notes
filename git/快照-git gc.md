@@ -31,8 +31,8 @@
 <h4 id="修改a.txt后commit">修改a.txt后commit</h4>
 <p>在a.txt文件内容中追加一个字母b使内容变成：‘aaaaab’<br>
 b.txt文件不改动<br>
-再次commit</p>
-<p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E6%96%B0%E5%A2%9E%E4%BA%863%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt=""></p>
+再次commit，新增了3个对象<br>
+<img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E6%96%B0%E5%A2%9E%E4%BA%863%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt=""></p>
 <h4 id="分析这三个对象">分析这三个对象</h4>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E5%88%86%E6%9E%90%E4%B8%89%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" alt="enter image description here"></p>
 <ul>
@@ -101,7 +101,7 @@ git这种commit 之后存储快照流的方式较为浪费空间<br>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/pack-verify.png" alt="enter image description here"></p>
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/git-pro-book%E5%8E%9F%E6%96%87%E4%BE%8B%E5%AD%90.png" alt=""></p>
-<p>上图是pro git这本书的例子，上面我们自己的例子好像并没有体现出差异性存储，新a.txt6个字节（aaaaab）旧a.txt5个字节（aaaaa）并且没有引用。<br>
+<p>上图是pro git这本书的例子，更上面我们自己的例子好像并没有体现出差异性存储，新a.txt6个字节（aaaaab）旧a.txt5个字节（aaaaa）并且没有引用。<br>
 我知道了，之所以会出现这样的情况是因为这两个文件的内容在同一行，<br>
 你在aaaaa后面追加了一个b变成aaaaab，在git看来不是加了一个b而是删除了一行aaaaa，然后在添加一行aaaaab，两个版本不存在增量delta（δ）<br>
 如果想像书的作者那种结果，你应该在a.txt文件中增加一行内容。</p>
