@@ -38,4 +38,12 @@
 <li>本质就是HEAD指针的值进行了变化。</li>
 <li>切换分支前好像是要先commit的，有待progit解释还未阅读到。</li>
 </ul>
+<blockquote>
+<p>但是，在你这么做之前<br>
+要留意你的工作目录和暂存区里那些还没有被提交的修改<br>
+它可能会和你即将检出的分支产生冲突从而阻止 Git 切换到该分支。<br>
+在切换分支之前， 最好保持一个干净的状态<br>
+有一些方法可以绕过这个问题（即，保存进度（stashing） 和 修补提交（commit amending））<br>
+我们会在 <a href="https://git-scm.com/book/zh/v2/ch00/r_git_stashing">储藏与清理</a> 中看到关于这两个命令的介绍。</p>
+</blockquote>
 
