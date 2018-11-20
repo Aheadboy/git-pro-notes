@@ -36,7 +36,7 @@
 <p><img src="https://raw.githubusercontent.com/Aheadboy/img_all/master/%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF.png" alt="enter image description here"></p>
 <ul>
 <li>本质就是HEAD指针的值进行了变化。</li>
-<li>切换分支前好像是要先commit的，有待progit解释还未阅读到。</li>
+<li>切换分支前是要先commit的。保持一个干净的状态</li>
 </ul>
 <blockquote>
 <p>但是，在你这么做之前<br>
